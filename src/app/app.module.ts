@@ -4,17 +4,27 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SimpleFormComponent } from './simple-form/simple-form.component';
+import {MailService} from "./mail.service";
+import { GreetDirective } from './greet.directive';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SimpleFormComponent,
+    GreetDirective,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    MailService,
+    {provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
