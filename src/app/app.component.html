@@ -1,4 +1,6 @@
 <h3>{{title}}</h3>
+<!--http请求展示的数据-->
+<app-members></app-members>
 <div>
    <!--app-simple-form挂载了simple-form组件上的内容-->
   <app-simple-form *ngFor="let message of mailService.messages;" [message]="message.text"
@@ -11,9 +13,18 @@
 
     </li>
   </ul>
-    <h2 greet="Hello, Semlinker!" author="Marksss">hello ng</h2>
+    <h2 *ngIf='show' greet="Hello, Mark!" author="Marksss">hello ng</h2>
+  <button (click)="toggle()">
+    {{ show ? "隐藏技能" : "显示技能" }}
+  </button>
+
+   <!--Usercomponent-->
+   <!--<app-user></app-user>-->
+
+
 </div>
 
 
 
 <!--使用 (eventName) ==> (update) 事件绑定的语法，监听我们自定义的 update 事件。当在 SimpleFormComponent 组件中修改 input 输入框的文本消息后，点击更新按钮，将会调用 AppComponent 组件类中的 onUpdate() 方法，更新对应的信息。-->
+@

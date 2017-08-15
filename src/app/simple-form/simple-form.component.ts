@@ -18,7 +18,7 @@ import {Component, OnInit, Input ,Output ,EventEmitter} from '@angular/core';
    :host { margin: 10px; }
    /*:host 表示选择宿主元素，即 AppComponent 组件模板中的 app-simple-form 元素*/
    .mousedown{
-      border: 2px solid orangered;
+        border: 2px solid orangered;
    }
    input:focus { font-weight: bold;}
   `
