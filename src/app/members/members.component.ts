@@ -18,7 +18,7 @@ export class MembersComponent implements OnInit {
    members:Member[];
   constructor(private memberService: MemberService) {} //使用构造注入方式，注入服务
 
-  ngOnInit() {
+  ngOnInit() {          //接受member服务return回来的数据
      this.memberService.getMember()
        .subscribe(data => {
            if(data) this.members = data;
