@@ -16,6 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SettingComponent } from './setting/setting.component';
 import { ProfilesettingComponent } from './profilesetting/profilesetting.component';
 import { PasswordsettingComponent } from './passwordsetting/passwordsetting.component';
+import { FormComponent } from './form/form.component';
+import {HttpClientModule} from "@angular/common/http";
 
 //使用 const 定义路由的配置信息，然后把它作为参数调用 RouterModule.forRoot() 方法
 
@@ -25,7 +27,7 @@ export const ROUTES : Routes = [
   { path: '', component: SimpleFormComponent },
   { path: 'member', component:MembersComponent},
   { path: 'user', component:UserComponent},
-  { path: 'profile/:username', component:ProfileComponent},
+  { path: 'form', component:FormComponent},
   { path: 'setting', component:SettingComponent,
     children:[
       {path:'profile',component:ProfilesettingComponent},
@@ -47,11 +49,13 @@ export const ROUTES : Routes = [
     SettingComponent,
     ProfilesettingComponent,
     PasswordsettingComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
      //方法用于在主模块中定义主要的路由信息
   ],

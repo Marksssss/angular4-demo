@@ -14,7 +14,7 @@ import {Component, OnInit, Input ,Output ,EventEmitter} from '@angular/core';
      <!--<button (click)="update.emit({text:message})">更新</button>-->
     <!--</div>-->
     
-     <div>用来测试一下静态路由</div>
+     <div>用来测试一下动态路由</div>
   `,
   // styles: [`
   //  :host { margin: 10px; }
