@@ -1,0 +1,9 @@
+input.ng-invalid {
+  border: 1px solid #000;
+}
+input.ng-valid {
+  border: 3px solid green;
+}
+select.ng-invalid + label:after {
+  content: '<-- 请选择版本!'
+}

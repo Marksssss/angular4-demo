@@ -2,40 +2,50 @@
 <!--http请求展示的数据-->
 <!--<app-members></app-members>-->
 <div>
-   <!--app-simple-form挂载了simple-form组件上的内容-->
-  <!--<app-simple-form *ngFor="let message of mailService.messages;" [message]="message.text"-->
-                   <!--(update)="onUpdate(message.id,$event.text)" >-->
+    <!--app-simple-form挂载了simple-form组件上的内容-->
+    <!--<app-simple-form *ngFor="let message of mailService.messages;" [message]="message.text"-->
+    <!--(update)="onUpdate(message.id,$event.text)" >-->
     <!--&lt;!&ndash;&ndash;&gt;-->
-  <!--</app-simple-form>-->
-  <!--<ul>-->
+    <!--</app-simple-form>-->
+    <!--<ul>-->
     <!--<li *ngFor="let message of mailService.messages ; let i=index;">-->
-      <!--{{message.text}}-->
+    <!--{{message.text}}-->
 
     <!--</li>-->
-  <!--</ul>-->
+    <!--</ul>-->
     <!--<h2 *ngIf='show' greet="Hello, Mark!" author="Marksss">hello ng</h2>-->
-  <!--<button (click)="toggle()">-->
+    <!--<button (click)="toggle()">-->
     <!--{{ show ? "隐藏技能" : "显示技能" }}-->
-  <!--</button>-->
+    <!--</button>-->
 
 
-   <!--<app-user></app-user>-->
-  <router-outlet>
+    <!--<app-user></app-user>-->
+    <router-outlet>
 
-  </router-outlet>
+    </router-outlet>
 
-  <!--<app-setting></app-setting>-->
-  <nav>
-    <a routerLink="/">首页</a>
-    <a routerLink="/member" >我的成员</a>
-    <a routerLink="/user" routerLinkActive="active">我的skills</a>
-    <a routerLink="/form" routerLinkActive="active">我的表单</a>
-    <a routerLink="setting" routerLinkActive="active">我的基本设定</a>
+    <!--<app-setting></app-setting>-->
+    <nav>
+        <a routerLink="/">首页</a>
+        <a routerLink="/member">我的成员</a>
+        <a routerLink="/user" routerLinkActive="active">我的skills</a>
+        <a routerLink="/form" routerLinkActive="active">我的表单</a>
+        <a routerLink="setting" routerLinkActive="active">我的基本设定</a>
+    </nav>
+    <!--<app-wrapper>
+        <app-counter></app-counter>
+        <app-counter></app-counter>
+        <app-counter></app-counter>
+    </app-wrapper>-->
+    <ng-container>
+        <ng-container *ngTemplateOutlet="item2"></ng-container>
+    </ng-container>
+    <ng-template #item1>我是一个移动节点1</ng-template>
+    <ng-template #item2>我是一个移动节点2</ng-template>
 
+    <child></child>
+    <p #greet>hello </p>
 
-
-  </nav>
 </div>
 
 <!--使用 (eventName) ==> (update) 事件绑定的语法，监听我们自定义的 update 事件。当在 SimpleFormComponent 组件中修改 input 输入框的文本消息后，点击更新按钮，将会调用 AppComponent 组件类中的 onUpdate() 方法，更新对应的信息。-->
-

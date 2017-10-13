@@ -18,6 +18,11 @@ import { ProfilesettingComponent } from './profilesetting/profilesetting.compone
 import { PasswordsettingComponent } from './passwordsetting/passwordsetting.component';
 import { FormComponent } from './form/form.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SassComponent } from './sass/sass.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+import { CounterComponent } from './counter/counter.component';
+import { UnlessDirective } from './unless.directive';
+
 
 //使用 const 定义路由的配置信息，然后把它作为参数调用 RouterModule.forRoot() 方法
 
@@ -31,11 +36,10 @@ export const ROUTES : Routes = [
   { path: 'setting', component:SettingComponent,
     children:[
       {path:'profile',component:ProfilesettingComponent},
-      {path:'password',component:PasswordsettingComponent}
+      {path:'password',component:PasswordsettingComponent},
+      {path:'sass',component:SassComponent},
     ]
-
   }
-
 
 ];
 @NgModule({
@@ -50,6 +54,10 @@ export const ROUTES : Routes = [
     ProfilesettingComponent,
     PasswordsettingComponent,
     FormComponent,
+    SassComponent,
+    WrapperComponent,
+    CounterComponent,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,

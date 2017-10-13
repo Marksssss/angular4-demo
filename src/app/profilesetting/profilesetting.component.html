@@ -1,6 +1,7 @@
 <h2>Hello Mark</h2>
 <div>
 
-   <span>works</span>
+  <p>The birthday is {{ birthday | date:format }}</p>
+  <button (click)="toggleFormat()">Toggle Format</button>
 
 </div>
