@@ -28,7 +28,7 @@ import {Component, OnInit, Input ,Output ,EventEmitter} from '@angular/core';
 })
 export class SimpleFormComponent implements OnInit {
   @Input() message :string; //用于定义组件的输入属性
-  @Output() update = new EventEmitter<{text: string}>(); //用@Output作为类型 监听update事件
+  @Output() update = new EventEmitter<{text: string}>(); //用@Output作为装饰器 监听update事件
 
   // onClick(event,value) {
   //   console.log(event);//鼠标对象

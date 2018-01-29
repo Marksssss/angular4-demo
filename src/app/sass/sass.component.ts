@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'child',
@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sass.component.scss']
 })
 export class SassComponent implements OnInit {
-  name:string = 'child-component'
+  @Input() name: string
+  @Output() onVoted = new EventEmitter<boolean>();
+  voted = false
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  vote(agreed: boolean) {
+    this.onVoted.emit(agreed);
+    this.voted = true;
   }
 
 }

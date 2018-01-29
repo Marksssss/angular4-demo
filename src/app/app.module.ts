@@ -22,6 +22,7 @@ import { SassComponent } from './sass/sass.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { CounterComponent } from './counter/counter.component';
 import { UnlessDirective } from './unless.directive';
+import { MissionControlComponent } from './mission-control/mission-control.component';
 
 
 //使用 const 定义路由的配置信息，然后把它作为参数调用 RouterModule.forRoot() 方法
@@ -58,6 +59,7 @@ export const ROUTES : Routes = [
     WrapperComponent,
     CounterComponent,
     UnlessDirective,
+    MissionControlComponent,
   ],
   imports: [
     BrowserModule,

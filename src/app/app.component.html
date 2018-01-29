@@ -43,9 +43,26 @@
     <ng-template #item1>我是一个移动节点1</ng-template>
     <ng-template #item2>我是一个移动节点2</ng-template>
 
-    <child></child>
-    <p #greet>hello </p>
+
+    <h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+    <child *ngFor="let voter of voters" [name]="voter" (onVoted)="onVoted($event)">
+    </child>
 
 </div>
+<div *ngFor="let item of voters;let $first=first;let $last=last">
+    <div class="description" (click)="point.click()">
+        <h4 class="heading" [hidden]="!$first">终点</h4>
+        <h4 class="heading" [hidden]="$first || $last ">停留</h4>
+        <h4 class="heading" [hidden]="$first || $last ">启动</h4>
+        <h4 class="heading" [hidden]="!$last || item.length < 1">起点</h4>
+
+        <p class="address" [hidden]="!$first && !$last">地址：{{$first}} {{$last}}</p>
+    </div>
+</div>
+<p>{{obj.first + obj.second}}</p>
+
+<select (change)="selectChange()">
+    <option *ngFor="let option of options" [value]="option.value">{{option.viewValue}}</option>
+</select>
 
 <!--使用 (eventName) ==> (update) 事件绑定的语法，监听我们自定义的 update 事件。当在 SimpleFormComponent 组件中修改 input 输入框的文本消息后，点击更新按钮，将会调用 AppComponent 组件类中的 onUpdate() 方法，更新对应的信息。-->

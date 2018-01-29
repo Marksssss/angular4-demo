@@ -1,7 +1,3 @@
-<div>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
-</div>
+<h4>{{name}}</h4>
+<button (click)="vote(true)" [disabled]="false">Agree</button>
+<button (click)="vote(false)" [disabled]="false">Disagree</button>
